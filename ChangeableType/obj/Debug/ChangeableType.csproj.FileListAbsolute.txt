@@ -1,0 +1,7 @@
+C:\Development\Repos\ChangeableType\ChangeableType\bin\ChangeableType.dll
+C:\Development\Repos\ChangeableType\ChangeableType\bin\ChangeableType.pdb
+C:\Development\Repos\ChangeableType\ChangeableType\bin\EntityFramework.dll
+C:\Development\Repos\ChangeableType\ChangeableType\bin\EntityFramework.xml
+C:\Development\Repos\ChangeableType\ChangeableType\obj\Debug\ChangeableType.csprojResolveAssemblyReference.cache
+C:\Development\Repos\ChangeableType\ChangeableType\obj\Debug\ChangeableType.dll
+C:\Development\Repos\ChangeableType\ChangeableType\obj\Debug\ChangeableType.pdb

@@ -1,0 +1,37 @@
+﻿@model ChangeableType.Controllers.MyModel 
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).on("keyup blur", "input[id$='Value']", function () {
+                var prefix = this.id.split("_")[0];
+                var oldValue = $("#" + prefix + "_OldValue").val();
+                var changed = oldValue != $(this).val()
+                $("#" + prefix + "_Changed").attr("checked", changed);
+                if (changed) {
+                    // validate
+                    $(this.form).validate().element($("#" + prefix + "_Value")[0]);
+                }
+            });
+
+            $(document).on("click", "input[id$='Changed']", function () {
+                if (!this.checked) {
+                    // replace value with old value
+                    var prefix = this.id.split("_")[0];
+                    var oldValue = $("#" + prefix + "_OldValue").val();
+                    $("#" + prefix + "_Value").val(oldValue);
+                    // validate
+                    $(this.form).validate().element($("#" + prefix + "_Value")[0]);
+                }
+            });
+        });
+    </script>
+
+    @Html.ChangeableFor(x => x.SomeInt, Model.SomeInt)
+    @Html.ChangeableFor(x => x.TheString, Model.TheString)
+    <input type="submit" value="Submit" />
+}

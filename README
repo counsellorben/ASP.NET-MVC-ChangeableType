@@ -1,0 +1,6 @@
+ChangeableType is a small project which adds a Changeable<T> class.  T can be any type.
+
+By using Changeable<T> and the @Html.ChangeableFor extension, you will
+be able to get markup which includes the appropriate EditorFor for your base 
+type, a checkbox to indicate whether changes have been made, a label and
+a ValidationMessageFor.

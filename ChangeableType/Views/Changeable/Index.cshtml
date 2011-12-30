@@ -8,7 +8,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $(document).on("keyup blur", "input[id$='Value']", function () {
-                var prefix = this.id.split("_")[0];
+                var prefix = this.name.split(".")[0];
                 var oldValue = $("#" + prefix + "_OldValue").val();
                 var changed = oldValue != $(this).val()
                 $("#" + prefix + "_Changed").attr("checked", changed);
@@ -21,7 +21,7 @@
             $(document).on("click", "input[id$='Changed']", function () {
                 if (!this.checked) {
                     // replace value with old value
-                    var prefix = this.id.split("_")[0];
+                    var prefix = this.name.split(".")[0];
                     var oldValue = $("#" + prefix + "_OldValue").val();
                     $("#" + prefix + "_Value").val(oldValue);
                     // validate
